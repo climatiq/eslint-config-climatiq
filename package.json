@@ -1,6 +1,6 @@
 {
   "name": "@climatiq/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESlint configuration for Climatiq projects",
   "main": "index.js",
   "repository": {
@@ -24,7 +24,7 @@
     "@next/eslint-plugin-next": ">=12.0.3",
     "@typescript-eslint/eslint-plugin": ">=5.3.1",
     "@typescript-eslint/parser": ">=5.3.1",
-    "eslint": ">=8.2.0",
+    "eslint": "^7",
     "eslint-config-next": ">=12.0.3",
     "eslint-config-prettier": ">=8.3.0",
     "eslint-plugin-prettier": ">=4.0.0",
@@ -36,7 +36,7 @@
     "@next/eslint-plugin-next": "^12.0.3",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
-    "eslint": "^8.2.0",
+    "eslint": "^7",
     "eslint-config-next": "^12.0.3",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
