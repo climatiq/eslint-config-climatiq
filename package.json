@@ -1,0 +1,45 @@
+{
+  "name": "@climatiq/eslint-config",
+  "version": "1.0.0",
+  "description": "ESlint configuration for Climatiq projects",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/climatiq/eslint-config-climatiq.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "javascript",
+    "eslintconfig",
+    "eslint"
+  ],
+  "author": "Climatiq",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/climatiq/eslint-config-climatiq/issues"
+  },
+  "homepage": "https://github.com/climatiq/eslint-config-climatiq#readme",
+  "peerDependencies": {
+    "@next/eslint-plugin-next": "^12.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "eslint": "^8.2.0",
+    "eslint-config-next": "^12.0.3",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^12.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "eslint": "^8.2.0",
+    "eslint-config-next": "^12.0.3",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
+  }
+}
