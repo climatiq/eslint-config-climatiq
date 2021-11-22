@@ -4,7 +4,7 @@ This package provides Climatiq's ESLint configuration as a base config for any p
 
 ## Installation
 
-To install this config and the peerDependencies (note the `npx` command). If you are using yarn, the command will detect it and will prompt to use yatn command instead.
+To install this config and the peerDependencies (note the `npx` command). If you are using yarn, the command will detect it and will prompt to use yarn command instead.
 
 ```bash
 npx install-peerdeps --dev @climatiq/eslint-config
