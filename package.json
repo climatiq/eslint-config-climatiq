@@ -1,6 +1,6 @@
 {
   "name": "@climatiq/eslint-config",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "ESlint configuration for Climatiq projects",
   "main": "index.js",
   "repository": {
@@ -44,5 +44,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "resolutions": {
+    "semver": "^7.5.3"
   }
 }
