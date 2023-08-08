@@ -7,7 +7,7 @@ This package provides Climatiq's ESLint configuration as a base config for any p
 To install this config and the peerDependencies (note the `npx` command). If you are using yarn, the command will detect it and will prompt to use yarn command instead.
 
 ```bash
-npx install-peerdeps --dev @climatiq/eslint-config
+yarn add --dev @climatiq/eslint-config
 ```
 
 Now create an ESLint configuration file for your project that extends Climatiq's rules:
@@ -26,7 +26,7 @@ npx eslint -c @climatiq/eslint-config ./src
 
 ## Running ESLint while webpack is in development mode
 
-When webpack is running and watching for changes, the `eslint-webpack-plugin` allows to run ESLint while watching by adding these lines to your `webpooack.config.js` file:
+When webpack is running and watching for changes, the `eslint-webpack-plugin` allows to run ESLint while watching by adding these lines to your `webpack.config.js` file:
 
 ```js
 const ESLintPlugin = require('eslint-webpack-plugin');
