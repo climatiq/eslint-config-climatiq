@@ -28,7 +28,7 @@ module.exports = {
 
   parserOptions: {
     project: true,
-    tsconfigRootDir: __dirname,
+    tsconfigRootDir: "./tsconfig.json",
   },
   overrides: [
     {
