@@ -1,6 +1,5 @@
 module.exports = {
-  // TODO still need web-vitals, eslint-react etc.
-  extends: ['plugin:@typescript-eslint/recommended-type-checked', 'plugin:@typescript-eslint/stylistic-type-checked', 'prettier'],
+  extends: ['next/core-web-vitals', 'plugin:@typescript-eslint/recommended-type-checked', 'prettier'],
   plugins: [
       // This plugin automatically removes unused imports
       "unused-imports"
