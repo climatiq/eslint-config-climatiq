@@ -1,13 +1,9 @@
 module.exports = {
   extends: ['next/core-web-vitals', 'plugin:@typescript-eslint/recommended-type-checked', 'prettier'],
   plugins: [
-      // This plugin automatically removes unused imports
-      "unused-imports"
-    ],
-  parserOptions: {
-    project: true,
-    // tsconfigRootDir: __dirname,
-  },
+    // This plugin automatically removes unused imports
+    "unused-imports"
+  ],
   rules: {
     'curly': 'error',
     'no-console': 2,
@@ -29,9 +25,14 @@ module.exports = {
       { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
     ],
   },
+
+  parserOptions: {
+    project: true,
+    tsconfigRootDir: __dirname,
+  },
   overrides: [
     {
-      files: ['**/*.test.ts', '**/*/test-stubs.ts', '**/*/test-helpers.ts', '**/*/*.cy.ts'],
+      files: ['**/*.test.ts', '**/*/test-stubs.ts', '**/*/test-helpers.ts'],
       rules: {
         // Handy to have all tests be async even if we don't use it in them
         '@typescript-eslint/require-await': 'off',
@@ -41,5 +42,11 @@ module.exports = {
         '@typescript-eslint/no-unsafe-assignment': 'off',
       },
     },
+    {
+      //see https://typescript-eslint.io/troubleshooting/#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file
+      // This is to avoid errors about this not being in the TSConfig
+      extends: ['plugin:@typescript-eslint/disable-type-checked'],
+      files: ['./**/*.js'],
+    }
   ],
 }
