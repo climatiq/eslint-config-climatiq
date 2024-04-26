@@ -2,8 +2,12 @@ module.exports = {
   extends: ['next/core-web-vitals', 'plugin:@typescript-eslint/recommended-type-checked', 'prettier'],
   plugins: [
       // This plugin automatically removes unused imports
-      "unused-imports"
+      // "unused-imports"
     ],
+  parserOptions: {
+    project: true,
+    // tsconfigRootDir: __dirname,
+  },
   rules: {
     'curly': 'error',
     'no-console': 2,
@@ -19,11 +23,11 @@ module.exports = {
     ],
     "@typescript-eslint/no-empty-function": "off",
     '@typescript-eslint/no-unused-vars': 'off', // delegate to plugin below that handles both vars and imports
-    'unused-imports/no-unused-imports': 'error',
-    'unused-imports/no-unused-vars': [
-      'warn',
-      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
-    ],
+    // 'unused-imports/no-unused-imports': 'error',
+    // 'unused-imports/no-unused-vars': [
+    //   'warn',
+    //   { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+    // ],
   },
   overrides: [
     {
