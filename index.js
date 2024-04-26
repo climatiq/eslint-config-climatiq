@@ -2,7 +2,7 @@ module.exports = {
   extends: ['next/core-web-vitals', 'plugin:@typescript-eslint/recommended-type-checked', 'prettier'],
   plugins: [
       // This plugin automatically removes unused imports
-      // "unused-imports"
+      "unused-imports"
     ],
   parserOptions: {
     project: true,
@@ -23,15 +23,15 @@ module.exports = {
     ],
     "@typescript-eslint/no-empty-function": "off",
     '@typescript-eslint/no-unused-vars': 'off', // delegate to plugin below that handles both vars and imports
-    // 'unused-imports/no-unused-imports': 'error',
-    // 'unused-imports/no-unused-vars': [
-    //   'warn',
-    //   { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
-    // ],
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+    ],
   },
   overrides: [
     {
-      files: ['**/*.test.ts', '**/*/test-stubs.ts', '**/*/test-helpers.ts'],
+      files: ['**/*.test.ts', '**/*/test-stubs.ts', '**/*/test-helpers.ts', '**/*/*.cy.ts'],
       rules: {
         // Handy to have all tests be async even if we don't use it in them
         '@typescript-eslint/require-await': 'off',
