@@ -1,4 +1,0 @@
-- Fix  deps
-- Write rules that are applicable to all projects, with type-checking etc
-- Make a custom config that's only applicable to React/Next
-- Try linking this against both autopilot-api and one of our react projects
