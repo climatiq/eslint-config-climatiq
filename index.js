@@ -25,11 +25,6 @@ module.exports = {
       { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
     ],
   },
-
-  parserOptions: {
-    project: true,
-    tsconfigRootDir: "./tsconfig.json",
-  },
   overrides: [
     {
       files: ['**/*.test.ts', '**/*/test-stubs.ts', '**/*/test-helpers.ts'],

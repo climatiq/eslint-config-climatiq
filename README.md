@@ -12,9 +12,14 @@ yarn add --dev @climatiq/eslint-config
 
 Now create an ESLint configuration file for your project that extends Climatiq's rules:
 
-```json
-{
-    "extends": ["@climatiq"]
+```js
+// eslint.rc.js
+module.exports = {
+    "extends": ["@climatiq"],
+    parserOptions: {
+        project: true,
+        tsconfigRootDir: __dirname,
+  },
 }
 ```
 

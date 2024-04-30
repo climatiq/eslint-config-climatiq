@@ -1,6 +1,6 @@
 {
   "name": "@climatiq/eslint-config",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "ESlint configuration for Climatiq projects",
   "main": "index.js",
   "repository": {
