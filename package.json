@@ -44,8 +44,5 @@
   },
   "resolutions": {
     "semver": "^7.5.3"
-  },
-  "devDependencies": {
-    "eslint-plugin-unused-imports": "^3.2.0"
   }
 }
