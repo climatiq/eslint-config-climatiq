@@ -6,7 +6,6 @@ module.exports = {
   ],
   rules: {
     'curly': 'error',
-    'no-console': 2,
     // Sometimes ts-ignore is handy if we justify it
     '@typescript-eslint/ban-ts-comment': [
       'warn',
@@ -42,6 +41,12 @@ module.exports = {
       // This is to avoid errors about this not being in the TSConfig
       extends: ['plugin:@typescript-eslint/disable-type-checked'],
       files: ['./**/*.js'],
+    },
+    {
+      files: ['**/*.tsx', '**/*.jsx'],
+      rules: {
+        'no-console': 'error' // Disable no-console rule for .tsx files
+      }
     }
   ],
 }
