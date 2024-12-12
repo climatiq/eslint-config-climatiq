@@ -35,9 +35,10 @@
   "dependencies": {
     "@typescript-eslint/parser": ">=5.3.1",
     "eslint": "^8",
-    "eslint-config-next": "^13.4.6",
+    "eslint-config-next": "^15.1.0",
     "eslint-config-prettier": ">=8.3.0",
-    "eslint-plugin-prettier": ">=4.0.0"
+    "eslint-plugin-prettier": ">=4.0.0",
+    "typescript": "^5"
   },
   "publishConfig": {
     "access": "public"
