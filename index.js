@@ -56,6 +56,7 @@ export default defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    ".vercel/**"
+    ".vercel/**",
+    ".claude/**"
   ])
 ]);
