@@ -3,11 +3,21 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 import prettier from "eslint-config-prettier/flat";
 import unusedImports from "eslint-plugin-unused-imports";
+import tseslint from "typescript-eslint";
+
 
 export default defineConfig([
   ...nextVitals,
   ...nextTs,
   prettier,
+  tseslint.configs.recommendedTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
+  },
   {
     rules: {
       curly: "error",
