@@ -35,7 +35,7 @@ export default defineConfig([
       "@typescript-eslint/no-unused-vars": "off", // delegate to plugin below that handles both vars and imports
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": [
-        "warn",
+        "error",
         {
           vars: "all",
           varsIgnorePattern: "^_",
@@ -66,6 +66,7 @@ export default defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    ".vercel/**"
+    ".vercel/**",
+    ".claude/**"
   ])
 ]);
