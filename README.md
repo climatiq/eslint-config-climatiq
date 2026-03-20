@@ -1,77 +1,45 @@
 # Climatiq ESLint Config
 
-This package provides Climatiq's ESLint configuration as a base config for any project in Climatiq and requires `@next/eslint-plugin-next` ,`@typescript-eslint/eslint-plugin` ,`@typescript-eslint/parser` ,`eslint` ,`eslint-config-next` ,`eslint-config-prettier` ,`eslint-plugin-prettier` ,`eslint-webpack-plugin` ,`prettier` ,`typescript`
+This package provides Climatiq's ESLint configuration as a base config for any project in Climatiq. It uses ESLint 9's flat config format and includes configurations for Next.js, TypeScript, and Prettier.
 
 ## Installation
 
-To install this config and the peerDependencies (note the `npx` command). If you are using yarn, the command will detect it and will prompt to use yarn command instead.
+```bash
+npm install --save-dev @climatiq/eslint-config
+```
+
+or with yarn:
 
 ```bash
 yarn add --dev @climatiq/eslint-config
 ```
 
-Now create an ESLint configuration file for your project that extends Climatiq's rules:
+## Usage
+
+Create an `eslint.config.mjs` file in your project root:
 
 ```js
-// eslint.rc.js
-module.exports = {
-    "extends": ["@climatiq"],
-    parserOptions: {
-        project: true,
-        tsconfigRootDir: __dirname,
-  },
-}
+import climatiqConfig from "@climatiq/eslint-config";
+
+export default [
+  ...climatiqConfig,
+  // Add your custom rules here
+];
 ```
 
-Or use it directly on the command line:
+## What's Included
+
+This config includes:
+
+- **Next.js** rules (core web vitals + TypeScript)
+- **Prettier** integration
+- **Unused imports** detection and auto-removal
+- Sensible defaults for TypeScript projects
+
+## Next.js Projects
+
+Next.js has built-in ESLint support. Simply create your `eslint.config.mjs` as shown above and run:
 
 ```bash
-npx eslint -c @climatiq/eslint-config ./src
-```
-
-## Running ESLint while webpack is in development mode
-
-When webpack is running and watching for changes, the `eslint-webpack-plugin` allows to run ESLint while watching by adding these lines to your `webpack.config.js` file:
-
-```js
-const ESLintPlugin = require('eslint-webpack-plugin');
-
-module.exports = {
-  // ...
-  plugins: [
-      // ...,
-      new ESLintPlugin({
-        extensions: ['js', 'ts', 'tsx', 'jsx'],
-        exclude: ['/node_modules/'],
-        failOnError: false,
-        files: [], // List of files/folders to run the lint while linting
-      })
-  ]
-}
-
-```
-
-### Next.js configuration
-
-You can extend Next configuration to modify the webpack configuration object in a similar way:
-
-```js
-const ESLintPlugin = require('eslint-webpack-plugin');
-
-module.exports = {
-    reactStrictMode: true,
-    webpack: (config, { dev }) => {
-        if (dev) {
-            config.plugins.push(
-                new ESLintPlugin({
-                    extensions: ['js', 'ts', 'tsx', 'jsx'],
-                    exclude: ['/node_modules/', '/.next/', '/public/'],
-                    failOnError: false,
-                    files: [], // List of files/folders to run the lint while linting
-                }),
-            );
-        }
-        return config;
-    },
-};
+next lint
 ```
