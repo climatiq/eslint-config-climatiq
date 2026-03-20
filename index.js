@@ -3,11 +3,21 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 import prettier from "eslint-config-prettier/flat";
 import unusedImports from "eslint-plugin-unused-imports";
+import tseslint from "typescript-eslint";
+
 
 export default defineConfig([
   ...nextVitals,
   ...nextTs,
   prettier,
+  tseslint.configs.recommendedTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
+  },
   {
     rules: {
       curly: "error",
@@ -25,7 +35,7 @@ export default defineConfig([
       "@typescript-eslint/no-unused-vars": "off", // delegate to plugin below that handles both vars and imports
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": [
-        "warn",
+        "error",
         {
           vars: "all",
           varsIgnorePattern: "^_",
@@ -56,6 +66,7 @@ export default defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    ".vercel/**"
+    ".vercel/**",
+    ".claude/**"
   ])
 ]);
