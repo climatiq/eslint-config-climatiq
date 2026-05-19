@@ -4,7 +4,7 @@
   "description": "ESlint configuration for Climatiq projects",
   "main": "index.js",
   "scripts": {
-    "prepare": "husky",
+    "prepare": "git config core.hooksPath .githooks",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -50,9 +50,6 @@
     "prettier": "^3",
     "semver": "^7.5.3",
     "typescript": "^6.0.3"
-  },
-  "devDependencies": {
-    "husky": "^9"
   },
   "publishConfig": {
     "access": "public"

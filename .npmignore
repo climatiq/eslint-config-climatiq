@@ -3,4 +3,4 @@ package-lock.json
 .gitignore
 .npmignore
 .github
-.husky
+.githooks
