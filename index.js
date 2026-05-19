@@ -5,7 +5,6 @@ import prettier from "eslint-config-prettier/flat";
 import unusedImports from "eslint-plugin-unused-imports";
 import tseslint from "typescript-eslint";
 
-
 export default defineConfig([
   ...nextVitals,
   ...nextTs,
@@ -28,8 +27,8 @@ export default defineConfig([
           "ts-check": "allow-with-description",
           "ts-expect-error": "allow-with-description",
           "ts-ignore": "allow-with-description",
-          "ts-nocheck": "allow-with-description"
-        }
+          "ts-nocheck": "allow-with-description",
+        },
       ],
       "@typescript-eslint/no-empty-function": "off",
       "@typescript-eslint/no-unused-vars": "off", // delegate to plugin below that handles both vars and imports
@@ -42,22 +41,22 @@ export default defineConfig([
           args: "after-used",
           argsIgnorePattern: "^_",
           caughtErrors: "all",
-          caughtErrorsIgnorePattern: "^_"
-        }
-      ]
-    }
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+    },
   },
   {
     plugins: {
       // This plugin automatically removes unused imports
-      "unused-imports": unusedImports
-    }
+      "unused-imports": unusedImports,
+    },
   },
   {
     files: ["**/*.tsx", "**/*.jsx"],
     rules: {
-      "no-console": "error" // Disable no-console rule for .tsx files
-    }
+      "no-console": "error", // Disable no-console rule for .tsx files
+    },
   },
   // Override default ignores of eslint-config-next.
   globalIgnores([
@@ -67,6 +66,6 @@ export default defineConfig([
     "build/**",
     "next-env.d.ts",
     ".vercel/**",
-    ".claude/**"
-  ])
+    ".claude/**",
+  ]),
 ]);
