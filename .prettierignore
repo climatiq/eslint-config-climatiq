@@ -1,0 +1,7 @@
+# Lockfiles
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Dependencies & build output
+node_modules/
