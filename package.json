@@ -48,7 +48,8 @@
     "typescript": "^6.0.3"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "resolutions": {
     "semver": "^7.5.3",

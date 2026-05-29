@@ -49,3 +49,11 @@ Next.js has built-in ESLint support. Simply create your `eslint.config.mjs` as s
 ```bash
 next lint
 ```
+
+## Release process
+
+To publish a new release, just create a new Release on the GitHub Repo Releases page with the new version.
+
+The GitHub Actions workflow `release.yaml` will tag the new version and publish it to npm.
+
+Therefore, the version in the package.json does not necessarily reflect the current version of the package.

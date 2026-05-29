@@ -1,0 +1,35 @@
+name: Release
+on:
+  release:
+    types: [created]
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Required for OIDC Trusted Publishing
+      contents: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # 6.0.2
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # 6.0.5
+
+      - name: Use Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # 6.4.0
+        with:
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --prefer-offline
+
+      - name: Version & Publish
+        env:
+          TAG_NAME: ${{ github.event.release.tag_name }}
+        run: |
+          npm install -g npm@latest
+          npm --version # Verify greater than v11.5.1 for trusted publishing
+
+          npm version ${TAG_NAME} --git-tag-version=false
+          npm --ignore-scripts publish --provenance
