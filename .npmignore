@@ -2,3 +2,5 @@ README.md
 package-lock.json
 .gitignore
 .npmignore
+.github
+.githooks

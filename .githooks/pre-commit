@@ -1,0 +1,7 @@
+#!/bin/sh
+if ! pnpm format:check; then
+  pnpm format
+  echo ""
+  echo "Prettier reformatted files. Review the changes, re-stage them, and commit again."
+  exit 1
+fi
