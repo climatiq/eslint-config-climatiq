@@ -14,6 +14,12 @@ or with yarn:
 yarn add --dev @climatiq/eslint-config
 ```
 
+or with pnpm:
+
+```bash
+pnpm add -D @climatiq/eslint-config
+```
+
 ## Usage
 
 Create an `eslint.config.mjs` file in your project root:
