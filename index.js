@@ -3,6 +3,7 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 import prettier from "eslint-config-prettier/flat";
 import unusedImports from "eslint-plugin-unused-imports";
+import clsx from "eslint-plugin-clsx";
 import tseslint from "typescript-eslint";
 
 export default defineConfig([
@@ -50,6 +51,18 @@ export default defineConfig([
     plugins: {
       // This plugin automatically removes unused imports
       "unused-imports": unusedImports,
+    },
+  },
+  {
+    plugins: { clsx },
+    settings: {
+      clsxOptions: {
+        clsx: ["default", "clsx"],
+        "@/src/lib/utils": ["cn"],
+      },
+    },
+    rules: {
+      ...clsx.configs.recommended.rules,
     },
   },
   {
