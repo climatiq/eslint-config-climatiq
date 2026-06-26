@@ -1,7 +1,7 @@
 name: Release
 on:
   release:
-    types: [created]
+    types: [published]
 jobs:
   release:
     name: Release
@@ -24,12 +24,21 @@ jobs:
       - name: Install dependencies
         run: pnpm install --prefer-offline
 
-      - name: Version & Publish
+      - name: Get version
+        id: get-version
         env:
           TAG_NAME: ${{ github.event.release.tag_name }}
+        # Clean off beginning "v" character as `npm version` command does not work with that
+        run: |
+          [[ "${TAG_NAME:0:1}" == "v" ]] && version="${TAG_NAME:1}" || version="$TAG_NAME"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Version & Publish
+        env:
+          VERSION: ${{ steps.get-version.outputs.version }}
         run: |
           npm install -g npm@latest
           npm --version # Verify greater than v11.5.1 for trusted publishing
 
-          npm version ${TAG_NAME} --git-tag-version=false
+          npm version ${VERSION} --git-tag-version=false
           npm --ignore-scripts publish --provenance
