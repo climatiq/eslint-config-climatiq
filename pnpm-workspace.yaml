@@ -1,3 +1,6 @@
 allowBuilds:
   sharp: false
   unrs-resolver: false
+
+overrides:
+  "@babel/core": ">=7.29.1 <8"
